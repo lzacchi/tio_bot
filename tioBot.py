@@ -2,18 +2,14 @@ import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import random
 import logging
-from config import TOKEN
-import os
-print(os.getcwd())
+from jokes import jokes
+from configTio import TOKEN
 
 
-logging.basicConfig(format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s', 
-					level = logging.INFO)
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-with open('frases.txt') as f:
-	jokes = []
-	for line in f:
-		jokes.append(line)
 
 def start(bot, update):
 	bot.sendMessage(chat_id = update.message.chat_id, text = 'E aí rapaziada kkkk')
@@ -32,6 +28,16 @@ def replies(bot, update):
 		message.reply_text('é pavê ou pacomê?')
 	if 'temer' in message.text.lower():
 		message.reply_text('FORA TEMER \n ESSES POLÍTICO É TUDO SAFADO KKKKKK')
+	if 'livro' in message.text.lower():
+		message.reply_text('Tá cu livrinho aí?')
+	if 'cortar cabelo' in message.text.lower() or 'cortar meu cabelo' in message.text.lower() or 'cortar o cabelo' in message.text.lower():
+		message.reply_text('Vai no cabelereiro? Quer corta a frente e pica atrás?')
+	if 'tomar no cu' in message.text.lower():
+		message.reply_text('Tomate cru é vitamina, como tu e tua prima!')
+	if 'café' in message.text.lower() or 'cafe' in message.text.lower():
+		message.reply_text('Prefere na cafeteira ou no cuador é mais forte?')
+	if 'quente' in message.text.lower() or 'calor' in message.text.lower():
+		message.reply_text('Nesse calor como sua a bunda né?')
 
 updater = Updater (TOKEN)
 dispatcher = updater.dispatcher
