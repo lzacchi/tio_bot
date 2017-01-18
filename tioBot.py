@@ -11,7 +11,7 @@ import telegram
 
 from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 
-# from configTio import TOKEN
+
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
