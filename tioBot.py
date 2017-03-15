@@ -4,7 +4,7 @@ import os
 
 import random
 
-from jokes import jokes
+from jokes import jokes, respostas
 
 import telegram
 
@@ -43,8 +43,6 @@ def replies(bot, update):
             message.reply_text('Tá cu livrinho aí?')
         if 'cortar cabelo' in message.text.lower() or 'cortar meu cabelo' in message.text.lower() or 'cortar o cabelo' in message.text.lower():
             message.reply_text('Vai no cabelereiro? Quer corta a frente e pica atrás?')
-        if 'tomar no cu' in message.text.lower():
-            message.reply_text('Tomate cru é vitamina, como tu e tua prima!')
         if 'café' in message.text.lower() or 'cafe' in message.text.lower():
             message.reply_text('Prefere na cafeteira ou no cuador é mais forte?')
         if 'quente' in message.text.lower() or 'calor' in message.text.lower():
@@ -58,6 +56,18 @@ def replies(bot, update):
         if 'jacare' in message.text.lower() or 'jacaré' in message.text.lower():
             message.reply_text('jacaré no seco anda?')
 
+def comebacks(bot,update):
+    if trigger():
+        message = update.message
+        if 'vai tomar no cu' in message.text.lower():
+            message.reply_text('Tomar no cu é vitamina, como tu e tua prima')
+        if 'tomate cru é vitamina, como tu e tua prima' or 'tomate cru e vitamina, como tu e tua prima' or 'tomate cru é vitamina como tu e tua prima' or 'tomate cru e vitamina como tu e tua prima':
+            message.reply_text('tomate cru é rolimã, como tu e tua irmã')
+
+def rekt(bot, update):
+    message = update.message
+    if 'rekt' in message.text.lower():
+        bot.sendMessage(chat_id=message.chat_id, text=random.choice(respostas))
 
 token = os.environ.get('TOKEN')
 appname = os.environ.get('APPNAME')
@@ -69,7 +79,7 @@ updater.bot.setWebhook("https://tio-bot.herokuapp.com/{}".format(token))
 dispatcher = updater.dispatcher
 start_handler = CommandHandler('start', start)
 dispatcher.add_handler(start_handler)
-help_handler = CommandHandler('help', cmd_help)
+help_handler = CommandHandler('help@tioBot', cmd_help)
 dispatcher.add_handler(help_handler)
 joke_handler = CommandHandler('joke', joke)
 dispatcher.add_handler(joke_handler)
