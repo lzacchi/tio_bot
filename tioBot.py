@@ -39,30 +39,6 @@ def replies(bot, update):
             message.reply_text('é pavê ou pacomê?')
         if 'temer' in message.text.lower():
             message.reply_text('FORA TEMER \n ESSES POLÍTICO É TUDO SAFADO KKKKKK')
-        if 'livro' in message.text.lower():
-            message.reply_text('Tá cu livrinho aí?')
-        if 'cortar cabelo' in message.text.lower() or 'cortar meu cabelo' in message.text.lower() or 'cortar o cabelo' in message.text.lower():
-            message.reply_text('Vai no cabelereiro? Quer corta a frente e pica atrás?')
-        if 'café' in message.text.lower() or 'cafe' in message.text.lower():
-            message.reply_text('Prefere na cafeteira ou no cuador é mais forte?')
-        if 'quente' in message.text.lower() or 'calor' in message.text.lower():
-            message.reply_text('Nesse calor como sua a bunda né?')
-        if 'caralho' in message.text.lower():
-            message.reply_text('Tira o caralho da boca!')
-        if 'pizza' in message.text.lower():
-            message.reply_text('Uma pizza gigante dá pra vinte comer?')
-        if'chuva' in message.text.lower():
-            message.reply_text('O macho vinha nas costas, que delícia')
-        if 'jacare' in message.text.lower() or 'jacaré' in message.text.lower():
-            message.reply_text('jacaré no seco anda?')
-
-def comebacks(bot,update):
-    if trigger():
-        message = update.message
-        if 'vai tomar no cu' in message.text.lower():
-            message.reply_text('Tomar no cu é vitamina, como tu e tua prima')
-        if 'tomate cru é vitamina, como tu e tua prima' or 'tomate cru e vitamina, como tu e tua prima' or 'tomate cru é vitamina como tu e tua prima' or 'tomate cru e vitamina como tu e tua prima':
-            message.reply_text('tomate cru é rolimã, como tu e tua irmã')
 
 def rekt(bot, update):
     message = update.message
